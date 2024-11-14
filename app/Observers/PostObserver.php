@@ -14,7 +14,7 @@ class PostObserver
     {
         Record::create([
             'user_id' => $post->user_id,
-            'text' => $post->content
+            'message' => "New post created with title: {$post->title}\nAnd with content: {$post->content}"
         ]);
     }
 
