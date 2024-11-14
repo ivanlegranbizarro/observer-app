@@ -27,8 +27,8 @@ class PostController extends Controller
     {
         $user_id = Auth::id();
         $data = $request->validated();
+        $data['user_id'] = $user_id;
         $post = Post::create($data);
-        $post->author()->associate($user_id);
         $post->save();
 
         return response()->json([
